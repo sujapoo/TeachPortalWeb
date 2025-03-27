@@ -94,6 +94,9 @@ const DashboardComponent = () => {
     navigate('/login');  
   };
 
+  const handleNavigateToTeacherOverview = () => {
+    navigate('/teacheroverview'); // Adjust the path as needed
+  };
 
   const sortedStudents = [...students].sort((a, b) =>
     a.firstName.localeCompare(b.firstName, undefined, { sensitivity: 'base' })
@@ -115,6 +118,9 @@ const DashboardComponent = () => {
       <h2>Teacher Dashboard</h2>
       <button onClick={handleSignOut} className="signout-button">
         Sign Out
+      </button>
+      <button onClick={handleNavigateToTeacherOverview} className="overview-button">
+        Teacher Overview
       </button>
       {loading ? (
         <div>Loading students...</div>

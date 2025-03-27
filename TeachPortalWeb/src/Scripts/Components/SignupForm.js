@@ -6,7 +6,6 @@ import { validateLength, validateEmail } from '../Validation/validation';
 const SignupForm = () => {
   const navigate = useNavigate();
   
-  
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [firstName, setFirstName] = useState('');
@@ -15,7 +14,6 @@ const SignupForm = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [loading, setLoading] = useState(false);
-
   
   const [validationErrors, setValidationErrors] = useState({
     firstName: '',
@@ -25,28 +23,19 @@ const SignupForm = () => {
     confirmPassword: ''
   });
 
- 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-   
     const newErrors = {};
 
- 
     newErrors.firstName = validateLength(firstName, 3, 50);
-
-  
     newErrors.lastName = validateLength(lastName, 3, 50);
-
-    
     newErrors.email = validateEmail(email);
 
-    
     if (password !== confirmPassword) {
       newErrors.confirmPassword = 'Passwords do not match.';
     }
 
-    
     if (Object.values(newErrors).some((error) => error)) {
       setValidationErrors(newErrors);
       return;
@@ -56,7 +45,6 @@ const SignupForm = () => {
     setErrorMessage(''); 
 
     try {
-   
       const requestBody = {
         userName: username,
         email: email,
@@ -66,17 +54,20 @@ const SignupForm = () => {
         students: [],  
       };
 
-     
       const response = await signupApi.post('/auth/signup', requestBody);
 
-      
       if (response.status === 201 || response.status === 200) {
         alert('Signup successful!');
         navigate('/login'); 
       }
     } catch (error) {
       console.error('Error during signup:', error);
-      setErrorMessage('Failed to sign up. Please try again later.');
+      
+      if (error.response && error.response.status === 500) {
+        setErrorMessage('Email is already registered. Please use a different email address.');        
+      } else {
+        setErrorMessage('Failed to sign up. Please try again later.');
+      }
     } finally {
       setLoading(false);
     }

@@ -2,12 +2,11 @@
 import {api, signupApi} from './api';
 
 class AuthService {
-  // Login method
   async login(username, password) {
     try {
       const response = await api.post('/auth/login', { username, password });
       if (response.data) {
-        localStorage.setItem('user', JSON.stringify(response.data));
+        localStorage.setItem('token', JSON.stringify(response.data));
       }
       return response.data;
     } catch (error) {
@@ -16,17 +15,17 @@ class AuthService {
     }
   }
 
-  // Logout method
+ 
   logout() {
-    localStorage.removeItem('user');
-    // Additional logout logic if needed
+    localStorage.removeItem('token');
+
   }
 
-  // Get current user
-  getCurrentUser() {
+
+  getCurrentUserToken() {
     try {
-      const user = localStorage.getItem('user');
-      return user ? JSON.parse(user) : null;
+      const token = localStorage.getItem('token');
+      return token ? JSON.parse(token) : null;
     } catch (error) {
       console.error('Error parsing user data from localStorage:', error);
       return null;
@@ -35,7 +34,7 @@ class AuthService {
 
   // Check if user is authenticated
   isAuthenticated() {
-    return this.getCurrentUser() !== null;
+    return this.getCurrentUserToken() !== null;
   }
 }
 

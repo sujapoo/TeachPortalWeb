@@ -9,10 +9,10 @@ const api = axios.create({
 
 api.interceptors.request.use(
   (config) => {
-    const user = JSON.parse(localStorage.getItem('user'));
+    const token = JSON.parse(localStorage.getItem('token'));
     
-    if (user) {
-      config.headers['Authorization'] = 'Bearer ' + user;
+    if (token) {
+      config.headers['Authorization'] = 'Bearer ' + token;
     }
     return config;
   },
@@ -25,7 +25,7 @@ api.interceptors.request.use(
 api.interceptors.response.use(
   (response) => response,
   (error) => {
-    if (error.response && error.response.status === 401) {
+    if (error.response && error.response.status === 403) {
      
       window.location.href = '/login';
     }
