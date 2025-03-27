@@ -16,6 +16,7 @@ cd /path/to/your/project
 Install dependencies: Inside the project directory, run the following command to install all the dependencies listed in the package.json file:
 
 npm install
+
 npm install axios react-router-dom jwt-decode
 This will download and install all the required libraries for your React app.
 
