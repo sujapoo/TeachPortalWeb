@@ -10,13 +10,11 @@ const DashboardComponent = () => {
   const [students, setStudents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [authChecked, setAuthChecked] = useState(false);
-
-  // Form state
+  
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
 
-  // Validation state
   const [errors, setErrors] = useState({});
 
   // Pagination state
@@ -95,7 +93,7 @@ const DashboardComponent = () => {
   };
 
   const handleNavigateToTeacherOverview = () => {
-    navigate('/teacheroverview'); // Adjust the path as needed
+    navigate('/teacheroverview'); 
   };
 
   const sortedStudents = [...students].sort((a, b) =>
