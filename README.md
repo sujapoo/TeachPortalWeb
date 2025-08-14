@@ -32,27 +32,32 @@ Route protection using an AuthLayout wrapper
 Modular reusable component structure for scalability
 
 **Project Structure**
+```text
 src/
-├── Components/          # Shared UI and layout components
+├── Components/
 │   ├── AuthLayout.js
 │   ├── Layout.js
 │   ├── Layout.css
 │   └── PrivateRoute.js
-│
-├── Pages/               # Page-specific components and styles
+├── Pages/
 │   ├── Dashboard/
+│   │   ├── Dashboard.js
+│   │   └── Dashboard.css
 │   ├── Login/
+│   │   ├── Login.js
+│   │   └── Login.css
 │   ├── Signup/
+│   │   ├── SignupForm.js
+│   │   └── Signup.css
 │   └── TeacherOverview/
-│
-├── Services/            # API and authentication services
+│       ├── TeacherOverview.js
+│       └── TeacherOverview.css
+├── Services/
 │   ├── api.js
 │   └── AuthService.js
-│
-├── Validation/          # Form validation utilities
-│
-└── App.js               # Application entry routes
-
+├── Validation/
+│   └── validation.js
+```
 **Tech Stack**
 
 Frontend: React.js, React Router DOM
