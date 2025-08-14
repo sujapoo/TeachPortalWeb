@@ -1,0 +1,24 @@
+.tov2-container .btn:not(.btn-primary):not(.btn-danger):not(.btn-secondary) {
+  border: 1px solid #d1d5db;
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.tov2-container .btn:hover { background: #f9fafb; }
+
+.tov2-container .btn.btn-primary {
+  background: #0ea5e9;
+  border-color: #0ea5e9;
+  color: #fff;
+}
+.tov2-container .btn.btn-danger {
+  background: #111827;
+  border-color: #111827;
+  color: #fff;
+}
+.tov2-container .btn.btn-secondary {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+  color: #111827;
+}

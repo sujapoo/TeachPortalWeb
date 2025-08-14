@@ -1,0 +1,24 @@
+.auth-wrap { max-width: 760px; margin: 0 auto; padding: 24px; }
+.auth-card { overflow: hidden; }
+
+.two-col { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 900px) { .two-col { grid-template-columns: 1fr; } }
+
+.form-group { display: flex; flex-direction: column; }
+.inline-error { color: #dc2626; font-size: 12px; margin-top: 4px; }
+.hint { color: #6b7280; margin-left: 12px; }
+
+.pwd-field { position: relative; }
+.pwd-toggle {
+  position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
+  background: transparent; border: none; cursor: pointer; font-size: 14px; padding: 2px 6px;
+}
+
+.pwd-meter { height: 6px; background: #f3f4f6; border-radius: 999px; margin-top: 6px; }
+.pwd-meter .bar { height: 100%; border-radius: 999px; transition: width .25s; }
+.pwd-meter .bar.s0 { width: 0; }
+.pwd-meter .bar.s1 { width: 20%; background: #ef4444; }
+.pwd-meter .bar.s2 { width: 40%; background: #f97316; }
+.pwd-meter .bar.s3 { width: 60%; background: #f59e0b; }
+.pwd-meter .bar.s4 { width: 80%; background: #10b981; }
+.pwd-meter .bar.s5 { width: 100%; background: #059669; }
