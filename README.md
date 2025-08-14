@@ -1,4 +1,4 @@
-Teacher Portal Web
+**Teacher Portal Web**
 
 A React-based web application designed for managing teachers and students. This portal provides secure authentication, role-based access, and a clean UI for adding students, managing teacher details, and viewing overviews.
 
@@ -6,18 +6,18 @@ Live Demo
 
 (If deployed, add link here)
 
-Screenshots
+**Screenshots**
 
-Login Page
+**Login Page**
 <img width="1388" height="747" alt="image" src="https://github.com/user-attachments/assets/ac154854-0d4a-456c-b38d-2f9cbfe5db7c" />
 
-Dashboard
+**Dashboard**
 <img width="1489" height="711" alt="image" src="https://github.com/user-attachments/assets/8cde92de-385a-42d3-8edb-b331bac9ca91" />
 
-Teacher Overview
+**Teacher Overview**
 <img width="1917" height="748" alt="image" src="https://github.com/user-attachments/assets/c85672dc-bac6-42da-a46c-e17f823d3eca" />
 
-Features
+**Features**
 
 Secure authentication with login and protected routes using React Router
 
@@ -31,7 +31,7 @@ Route protection using an AuthLayout wrapper
 
 Modular reusable component structure for scalability
 
-Project Structure
+**Project Structure**
 src/
 ├── Components/          # Shared UI and layout components
 │   ├── AuthLayout.js
@@ -53,7 +53,7 @@ src/
 │
 └── App.js               # Application entry routes
 
-Tech Stack
+**Tech Stack**
 
 Frontend: React.js, React Router DOM
 
@@ -65,7 +65,7 @@ HTTP Requests: Axios
 
 Authentication: JWT (JSON Web Token) decoding for user session handling
 
-Installation & Setup
+**Installation & Setup**
 
 Clone the repository
 
@@ -91,7 +91,7 @@ npm start
 By default, the app runs on:
 http://localhost:3000/
 
-Future Enhancements
+**Future Enhancements**
 
 Data persistence with backend API
 
