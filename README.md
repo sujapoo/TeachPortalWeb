@@ -1,28 +1,102 @@
-Visual Studio Code
-Repository : https://github.com/sujapoo/TeachPortalWeb.git
+Teacher Portal Web
 
-Install Node.js (if not already installed):
+A React-based web application designed for managing teachers and students. This portal provides secure authentication, role-based access, and a clean UI for adding students, managing teacher details, and viewing overviews.
 
-Go to https://nodejs.org/ and download the latest LTS (Long-Term Support) version of Node.js, which includes npm (Node Package Manager).
+Live Demo
 
-You can verify the installation by running the following in your terminal:
-node -v
-npm -v
-These commands should return the version numbers for node and npm.
+(If deployed, add link here)
 
-Navigate to your project folder: Open your terminal and navigate to the folder where your React project is located. You can use the cd command:
+Screenshots
 
-cd /path/to/your/project
-Install dependencies: Inside the project directory, run the following command to install all the dependencies listed in the package.json file:
+Login Page
+<img width="1388" height="747" alt="image" src="https://github.com/user-attachments/assets/ac154854-0d4a-456c-b38d-2f9cbfe5db7c" />
+
+Dashboard
+<img width="1489" height="711" alt="image" src="https://github.com/user-attachments/assets/8cde92de-385a-42d3-8edb-b331bac9ca91" />
+
+Teacher Overview
+<img width="1917" height="748" alt="image" src="https://github.com/user-attachments/assets/c85672dc-bac6-42da-a46c-e17f823d3eca" />
+
+Features
+
+Secure authentication with login and protected routes using React Router
+
+Teacher overview with associated student lists
+
+Student management with add, search, and list functionality
+
+Responsive, mobile-friendly design with reusable components
+
+Route protection using an AuthLayout wrapper
+
+Modular reusable component structure for scalability
+
+Project Structure
+src/
+├── Components/          # Shared UI and layout components
+│   ├── AuthLayout.js
+│   ├── Layout.js
+│   ├── Layout.css
+│   └── PrivateRoute.js
+│
+├── Pages/               # Page-specific components and styles
+│   ├── Dashboard/
+│   ├── Login/
+│   ├── Signup/
+│   └── TeacherOverview/
+│
+├── Services/            # API and authentication services
+│   ├── api.js
+│   └── AuthService.js
+│
+├── Validation/          # Form validation utilities
+│
+└── App.js               # Application entry routes
+
+Tech Stack
+
+Frontend: React.js, React Router DOM
+
+State Management: React Hooks (useState, useEffect)
+
+Styling: CSS3 (component-level styles)
+
+HTTP Requests: Axios
+
+Authentication: JWT (JSON Web Token) decoding for user session handling
+
+Installation & Setup
+
+Clone the repository
+
+git clone https://github.com/sujapoo/TeachPortalWeb.git
+cd TeachPortalWeb
+
+
+Install dependencies
 
 npm install
 
+
+Install required packages
+
 npm install axios react-router-dom jwt-decode
-This will download and install all the required libraries for your React app.
 
-Note: If you're using Yarn instead of npm, you can run yarn install instead.
 
-Start the React development server: After the dependencies are installed, you can run the development server to start your app:
+Start the development server
 
 npm start
-This will start the development server and open the app in your browser. By default, the app will be available at http://localhost:3000/.
+
+
+By default, the app runs on:
+http://localhost:3000/
+
+Future Enhancements
+
+Data persistence with backend API
+
+Role-based user access levels
+
+Sorting, filtering, and pagination improvements
+
+Integration with a database (e.g., MongoDB, PostgreSQL)
