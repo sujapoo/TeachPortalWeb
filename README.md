@@ -57,6 +57,7 @@ src/
 │   └── AuthService.js
 ├── Validation/
 │   └── validation.js
+└── App.js
 ```
 **Tech Stack**
 
